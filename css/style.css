@@ -1,0 +1,1631 @@
+/* ==========================================================================
+   ESTILO CARTAZISTA - VISUAL CARTOON RETÔ / NEO-BRUTALIST ELEGANTE
+   Allison Cartazista - Franca/SP e Região
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --yellow-main: #FFE500;
+  --yellow-light: #FFF566;
+  --yellow-dark: #F59E0B;
+  --red-main: #FF2A37;
+  --red-dark: #D90429;
+  --black-ink: #141416;
+  --paper-bg: #FFFDF7;
+  --card-bg: #FFFFFF;
+  --blue-pop: #2563EB;
+  --purple-vitrine: #8B5CF6;
+  --green-whats: #25D366;
+  --green-dark: #128C7E;
+  --border-thick: 3.5px solid var(--black-ink);
+  --border-medium: 2.5px solid var(--black-ink);
+  --shadow-hard: 5px 5px 0px var(--black-ink);
+  --shadow-hard-lg: 8px 8px 0px var(--black-ink);
+  --shadow-hard-sm: 3px 3px 0px var(--black-ink);
+  --radius-cartoon: 16px;
+  --radius-sm: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--paper-bg);
+  color: var(--black-ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-image: radial-gradient(var(--black-ink) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
+/* ================= UTILITIES & CARTOON ELEMENTS ================= */
+.font-display {
+  font-family: 'Lilita One', cursive;
+  letter-spacing: 0.5px;
+}
+
+.font-impact {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cartoon-box {
+  background: var(--card-bg);
+  border: var(--border-thick);
+  border-radius: var(--radius-cartoon);
+  box-shadow: var(--shadow-hard);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartoon-box:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.cartoon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: var(--yellow-main);
+  border: var(--border-medium);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.badge-location {
+  background: #38bdf8;
+  color: var(--black-ink);
+  border: var(--border-medium);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-hard-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cartoon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  font-family: 'Lilita One', cursive;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: var(--border-thick);
+  border-radius: var(--radius-cartoon);
+  box-shadow: var(--shadow-hard);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+}
+
+.cartoon-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.cartoon-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.btn-yellow {
+  background: var(--yellow-main);
+  color: var(--black-ink);
+}
+
+.btn-yellow:hover {
+  background: var(--yellow-light);
+}
+
+.btn-red {
+  background: var(--red-main);
+  color: #fff;
+}
+
+.btn-red:hover {
+  background: #ff4550;
+}
+
+.btn-purple {
+  background: var(--purple-vitrine);
+  color: #fff;
+}
+
+.btn-purple:hover {
+  background: #7c3aed;
+}
+
+.btn-green {
+  background: var(--green-whats);
+  color: #fff;
+  border-color: var(--black-ink);
+}
+
+.btn-green:hover {
+  background: #2fe772;
+}
+
+.btn-dark {
+  background: var(--black-ink);
+  color: #fff;
+}
+
+/* ================= TOP ANNOUNCEMENT BAR (MARQUEE INFINITO LENTO) ================= */
+.top-bar {
+  background: var(--black-ink);
+  color: #fff;
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-bottom: var(--border-medium);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 3rem;
+  white-space: nowrap;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.top-highlight {
+  color: var(--yellow-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-badge-location {
+  background: var(--red-main);
+  color: #fff;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ================= HEADER / NAVBAR ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 253, 247, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-thick);
+  padding: 0.75rem 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND HEADER - SOMENTE O ESCRITO ELEGANTE */
+.logo-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--black-ink);
+  transition: transform 0.15s ease;
+}
+
+.logo-brand:hover {
+  transform: translateX(2px);
+}
+
+.logo-text-group h1 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--black-ink);
+  letter-spacing: 0.5px;
+}
+
+.logo-text-group p {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--red-main);
+  letter-spacing: 1px;
+  margin-top: 0.15rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.4rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--black-ink);
+  font-weight: 800;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--red-main);
+}
+
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* REDES SOCIAIS NO HEADER (INSTAGRAM & FACEBOOK) */
+.social-icon-btn {
+  width: 44px;
+  height: 44px;
+  border: var(--border-thick);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.social-icon-btn.btn-insta {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-icon-btn.btn-face {
+  background: #1877F2;
+}
+
+.social-icon-btn.btn-zap {
+  background: var(--green-whats);
+}
+
+.social-icon-btn:hover {
+  transform: scale(1.12) rotate(6deg);
+  box-shadow: var(--shadow-hard);
+}
+
+.social-icon-btn:active {
+  transform: scale(0.95);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: var(--yellow-main);
+  border: var(--border-thick);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  padding: 4rem 0 3.5rem;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.hero-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+
+.hero-tag {
+  background: var(--yellow-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border: var(--border-thick);
+  border-radius: 999px;
+  box-shadow: var(--shadow-hard-sm);
+  transform: rotate(-1.5deg);
+}
+
+.hero-tag-city {
+  background: var(--red-main);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border: var(--border-thick);
+  border-radius: 999px;
+  box-shadow: var(--shadow-hard-sm);
+  transform: rotate(1.5deg);
+}
+
+.hero-title {
+  font-family: 'Lilita One', cursive;
+  font-size: 3.5rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--black-ink);
+  margin-bottom: 1.2rem;
+}
+
+.hero-title .highlight-yellow {
+  background: var(--yellow-main);
+  padding: 0 0.35rem;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 3px 3px 0px var(--black-ink);
+  border: var(--border-medium);
+  transform: rotate(1deg);
+}
+
+.hero-title .highlight-red {
+  color: var(--red-main);
+  text-shadow: 2px 2px 0px var(--black-ink);
+}
+
+.hero-subtitle {
+  font-size: 1.18rem;
+  color: #3f3f46;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero-features {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fff;
+  border: var(--border-medium);
+  border-radius: 12px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.feature-pill .icon {
+  font-size: 1.1rem;
+}
+
+/* HERO SHOWCASE CARD */
+.hero-card-stack {
+  position: relative;
+}
+
+.hero-logo-box {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: 24px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-hard-lg);
+  transform: rotate(1deg);
+  position: relative;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.hero-logo-box:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.hero-logo-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0px var(--black-ink));
+  margin-bottom: 0.75rem;
+}
+
+.hero-logo-caption {
+  background: var(--yellow-main);
+  border: var(--border-medium);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-hard-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-logo-caption h3 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+
+.hero-social-strip {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.floating-sticker-star {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 95px;
+  height: 95px;
+  background: var(--yellow-main);
+  border: var(--border-thick);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hard);
+  font-family: 'Lilita One', cursive;
+  font-size: 0.85rem;
+  line-height: 1.05;
+  text-align: center;
+  animation: floatBounce 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+.floating-sticker-star .city {
+  color: var(--red-main);
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0) rotate(8deg); }
+  50% { transform: translateY(-8px) rotate(14deg); }
+}
+
+/* ================= SECTION HEADERS ================= */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.section-tag {
+  background: var(--yellow-main);
+  display: inline-block;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: var(--border-thick);
+  border-radius: 999px;
+  box-shadow: var(--shadow-hard-sm);
+  margin-bottom: 0.8rem;
+  transform: rotate(-1deg);
+}
+
+.section-title {
+  font-family: 'Lilita One', cursive;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.services-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--radius-cartoon);
+  padding: 2rem 1.4rem;
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.service-badge-top {
+  position: absolute;
+  top: -15px;
+  right: 18px;
+  font-family: 'Lilita One', cursive;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.7rem;
+  border: var(--border-medium);
+  border-radius: 8px;
+  box-shadow: var(--shadow-hard-sm);
+  text-transform: uppercase;
+}
+
+.badge-card { background: var(--yellow-main); }
+.badge-vitrine { background: var(--purple-vitrine); color: #fff; }
+.badge-fabric { background: var(--red-main); color: #fff; }
+.badge-plastic { background: #38bdf8; color: var(--black-ink); }
+
+.service-icon-box {
+  width: 68px;
+  height: 68px;
+  border: var(--border-thick);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.icon-yellow { background: var(--yellow-main); }
+.icon-purple { background: var(--purple-vitrine); color: #fff; }
+.icon-red { background: var(--red-main); color: #fff; }
+.icon-blue { background: #38bdf8; }
+
+.service-card h3 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+  line-height: 1.15;
+}
+
+.service-card p {
+  color: #4b5563;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin-bottom: 1.3rem;
+}
+
+.service-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.service-list li {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  line-height: 1.35;
+}
+
+.service-list li span.bullet {
+  color: var(--red-main);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* ================= SPECIAL BANNER: POR QUE CARTAZ MANUAL? ================= */
+.why-manual-section {
+  padding: 4.5rem 0;
+  background: var(--yellow-main);
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+  position: relative;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.why-left h2 {
+  font-family: 'Lilita One', cursive;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.why-left p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.why-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.why-point-box {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--radius-cartoon);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-hard);
+}
+
+.why-point-box .point-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.why-point-box h4 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.why-point-box p {
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* ================= PORTFOLIO / GALLERY SECTION COM MARCA D'ÁGUA BRANCA ================= */
+.portfolio-section {
+  padding: 5rem 0;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.15rem;
+  font-family: 'Lilita One', cursive;
+  font-size: 1rem;
+  background: #fff;
+  border: var(--border-medium);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-hard-sm);
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--yellow-main);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.gallery-card {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: var(--radius-cartoon);
+  padding: 0.9rem;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px) rotate(0.5deg);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.gallery-thumb-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: var(--border-medium);
+  aspect-ratio: 4/5;
+  background: #f1f1f1;
+  position: relative;
+}
+
+.gallery-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.gallery-card:hover .gallery-thumb-wrap img {
+  transform: scale(1.05);
+}
+
+/* MARCA D'ÁGUA EM COR BRANCA */
+.img-watermark {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #ffffff;
+  font-family: 'Lilita One', cursive;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  backdrop-filter: blur(4px);
+  z-index: 4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.img-watermark i {
+  color: #ffffff;
+}
+
+.img-watermark-diagonal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-family: 'Lilita One', cursive;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.38);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7), 1px 1px 2px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 3;
+}
+
+.gallery-tag-float {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Lilita One', cursive;
+  font-size: 0.85rem;
+  background: var(--yellow-main);
+  border: var(--border-medium);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px var(--black-ink);
+  text-transform: uppercase;
+  z-index: 4;
+}
+
+.gallery-size-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'Lilita One', cursive;
+  font-size: 0.8rem;
+  background: var(--black-ink);
+  color: #fff;
+  border: var(--border-medium);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px var(--black-ink);
+  text-transform: uppercase;
+  z-index: 4;
+}
+
+.gallery-info {
+  padding: 0.9rem 0.3rem 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-info h4 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.22rem;
+  text-transform: uppercase;
+}
+
+.gallery-info .btn-zoom {
+  background: var(--black-ink);
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.gallery-card:hover .btn-zoom {
+  background: var(--red-main);
+}
+
+/* ================= FAQ SECTION (SEO LOCAL GOOGLE FRANCA SP) ================= */
+.faq-section {
+  padding: 4.5rem 0;
+  background: #fff;
+  border-top: var(--border-thick);
+}
+
+.faq-grid {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faq-card {
+  background: #FFFDF7;
+  border: var(--border-thick);
+  border-radius: 16px;
+  box-shadow: var(--shadow-hard-sm);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.faq-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hard);
+}
+
+.faq-question {
+  padding: 1.2rem 1.5rem;
+  font-family: 'Lilita One', cursive;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  gap: 1rem;
+}
+
+.faq-question i {
+  color: var(--red-main);
+  transition: transform 0.2s ease;
+}
+
+.faq-card.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 1rem;
+  color: #3f3f46;
+  line-height: 1.6;
+}
+
+/* ================= FORMULÁRIO DE ORÇAMENTO RÁPIDO & RESPONSIVIDADE TOTAL ================= */
+.order-simulator-section {
+  padding: 5rem 0;
+  background: #FFFBE6;
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+  position: relative;
+}
+
+.sim-container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: 24px;
+  padding: 3rem 2.5rem 2.5rem;
+  box-shadow: var(--shadow-hard-lg);
+  position: relative;
+}
+
+.sim-badge {
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: var(--red-main);
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  font-family: 'Lilita One', cursive;
+  font-size: 1.1rem;
+  border: var(--border-thick);
+  border-radius: 999px;
+  box-shadow: var(--shadow-hard-sm);
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.sim-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.sim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sim-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.sim-field label {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--black-ink);
+}
+
+.sim-input, .sim-select, .sim-textarea {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  border: var(--border-thick);
+  border-radius: 12px;
+  background: #FFFDF7;
+  outline: none;
+  box-shadow: var(--shadow-hard-sm);
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--black-ink);
+  appearance: auto;
+}
+
+.sim-input:focus, .sim-select:focus, .sim-textarea:focus {
+  background: #fff;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
+  border-color: var(--black-ink);
+}
+
+.sim-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.sim-btn-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sim-btn-wrapper .cartoon-btn {
+  width: 100%;
+  font-size: 1.35rem;
+  padding: 1.1rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: normal;
+}
+
+/* ================= ALLISON CARTOON BRAND SHOWCASE & REDES SOCIAIS ================= */
+.allison-bio-section {
+  padding: 5rem 0;
+  background: #fff;
+  border-top: var(--border-thick);
+}
+
+.allison-bio-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.bio-mascot-card {
+  background: #FFFDF7;
+  border: var(--border-thick);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-hard-lg);
+  text-align: center;
+  transform: rotate(-1.5deg);
+}
+
+.bio-mascot-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0px var(--black-ink));
+}
+
+.bio-content h2 {
+  font-family: 'Lilita One', cursive;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.bio-content p {
+  font-size: 1.1rem;
+  color: #3f3f46;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.social-badges-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.social-pill-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  border: var(--border-thick);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Lilita One', cursive;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-pill-card.insta {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-pill-card.face {
+  background: #1877F2;
+}
+
+.social-pill-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hard);
+}
+
+.cities-badge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.city-pill {
+  background: var(--yellow-main);
+  border: var(--border-medium);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 2px 2px 0px var(--black-ink);
+}
+
+/* ================= FOOTER & CONTADOR DE VISITAS ================= */
+footer {
+  background: var(--black-ink);
+  color: #fff;
+  border-top: var(--border-thick);
+  padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand h2 {
+  font-family: 'Lilita One', cursive;
+  font-size: 2rem;
+  color: var(--yellow-main);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand p {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-col h4 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  border-bottom: 2px solid var(--yellow-main);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #d4d4d8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: var(--yellow-main);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+  color: #e4e4e7;
+  font-weight: 600;
+}
+
+.footer-contact-item span.icon {
+  font-size: 1.3rem;
+  color: var(--yellow-main);
+}
+
+.footer-bottom {
+  border-top: 1px solid #27272a;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #71717a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* CONTADOR DE VISITAS DISCRETO */
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: #71717a;
+  background: #18181b;
+  border: 1px solid #27272a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+  user-select: none;
+}
+
+.visitor-counter i {
+  color: #a1a1aa;
+  font-size: 0.75rem;
+}
+
+.visitor-counter strong {
+  color: #e4e4e7;
+  font-weight: 700;
+}
+
+/* ================= FLOATING WHATSAPP BUTTON ================= */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.whats-bubble {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: 12px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-hard-sm);
+  color: var(--black-ink);
+  white-space: nowrap;
+  animation: pulseBubble 2s infinite ease-in-out;
+}
+
+@keyframes pulseBubble {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.whats-circle-btn {
+  width: 65px;
+  height: 65px;
+  background: var(--green-whats);
+  border: var(--border-thick);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.2rem;
+  box-shadow: var(--shadow-hard);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whats-circle-btn:hover {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: var(--shadow-hard-lg);
+  background: #2fe772;
+}
+
+/* ================= LIGHTBOX MODAL COM MARCA D'ÁGUA BRANCA ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border: var(--border-thick);
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  box-shadow: var(--shadow-hard-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--yellow-main);
+  border-bottom: var(--border-thick);
+}
+
+.modal-header h3 {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.modal-close-btn {
+  background: var(--red-main);
+  color: #fff;
+  border: var(--border-medium);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 2px 2px 0px var(--black-ink);
+  transition: transform 0.15s;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.1);
+}
+
+.modal-body {
+  padding: 1.5rem;
+  text-align: center;
+  overflow-y: auto;
+  background: #fbfbfb;
+  position: relative;
+}
+
+.modal-img-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.modal-body img {
+  max-width: 100%;
+  max-height: 62vh;
+  object-fit: contain;
+  border: var(--border-medium);
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard-sm);
+  display: block;
+}
+
+.modal-watermark-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.78);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 0.45rem 1.3rem;
+  border-radius: 999px;
+  font-family: 'Lilita One', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+}
+
+.modal-watermark-overlay i {
+  color: #ffffff;
+}
+
+.modal-caption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3f3f46;
+}
+
+/* ================= RESPONSIVIDADE DETALHADA ================= */
+@media (max-width: 1200px) {
+  .services-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-actions, .hero-features, .hero-tag-row {
+    justify-content: center;
+  }
+  .allison-bio-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-badges-container {
+    justify-content: center;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .sim-container {
+    padding: 2.5rem 1.5rem 1.75rem;
+    border-radius: 18px;
+  }
+  .sim-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .sim-badge {
+    left: 20px;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.9rem;
+  }
+  .sim-btn-wrapper .cartoon-btn {
+    font-size: 1.15rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .whats-bubble {
+    display: none;
+  }
+  .modal-watermark-overlay {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    white-space: normal;
+    width: 90%;
+  }
+  .sim-container {
+    padding: 2.2rem 1.1rem 1.5rem;
+  }
+  .sim-badge {
+    top: -14px;
+    left: 15px;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.75rem;
+  }
+  .sim-input, .sim-select, .sim-textarea {
+    font-size: 16px; /* Evita zoom automático em iPhones/Android */
+    padding: 0.75rem 0.85rem;
+  }
+  .sim-btn-wrapper .cartoon-btn {
+    font-size: 1rem;
+    padding: 0.9rem 0.75rem;
+    gap: 0.4rem;
+  }
+  .sim-btn-wrapper .cartoon-btn i {
+    font-size: 1.3rem !important;
+  }
+  .logo-text-group h1 {
+    font-size: 1.35rem;
+  }
+  .logo-text-group p {
+    font-size: 0.72rem;
+  }
+}
