@@ -131,95 +131,93 @@
 </head>
 <body>
 
-  <!-- BARRA DE ANÚNCIO DO TOPO (TEXTO MARQUEE CORRENDO LENTAMENTE EM LOOP INFINITO) -->
-  <div class="top-bar">
-    <div class="marquee-track">
-      <!-- BLOCO 1 -->
-      <div class="marquee-item">
-        <span class="top-badge-location"><i class="fa-solid fa-location-dot"></i> FRANCA / SP E TODA A REGIÃO</span>
-        <span class="top-highlight"><i class="fa-solid fa-paintbrush"></i> ARTE QUE VENDE!</span>
-        <span>• Cartazes em Papel Cartão (Gôndolas, Ilhas, Balcões, Paredes e Recortes)</span>
-        <span class="top-highlight"><i class="fa-solid fa-gem"></i> Pintura em Vitrines para Lojas</span>
-        <span>• Faixas em Tecido para Fachadas</span>
-        <span>• Faixas Plásticas 100% Impermeáveis</span>
-        <span class="top-highlight"><i class="fa-solid fa-truck-fast"></i> Atendimento Rápido no seu Comércio</span>
-        <span>• Fale direto com o Allison: <strong>(16) 99115-3733</strong></span>
-      </div>
-      <!-- BLOCO 2 (DUPLICADO PARA CONTINUIDADE SEM EMENDAS) -->
-      <div class="marquee-item" aria-hidden="true">
-        <span class="top-badge-location"><i class="fa-solid fa-location-dot"></i> FRANCA / SP E TODA A REGIÃO</span>
-        <span class="top-highlight"><i class="fa-solid fa-paintbrush"></i> ARTE QUE VENDE!</span>
-        <span>• Cartazes em Papel Cartão (Gôndolas, Ilhas, Balcões, Paredes e Recortes)</span>
-        <span class="top-highlight"><i class="fa-solid fa-gem"></i> Pintura em Vitrines para Lojas</span>
-        <span>• Faixas em Tecido para Fachadas</span>
-        <span>• Faixas Plásticas 100% Impermeáveis</span>
-        <span class="top-highlight"><i class="fa-solid fa-truck-fast"></i> Atendimento Rápido no seu Comércio</span>
-        <span>• Fale direto com o Allison: <strong>(16) 99115-3733</strong></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CABEÇALHO / NAVBAR (SOMENTE O ESCRITO ELEGANTE SEM A LOGO) -->
-  <header>
-    <div class="container navbar">
-      <!-- ESCRITO ALLISON CARTAZISTA FRANCA/SP ARTE COMERCIAL -->
-      <a href="#" class="logo-brand">
-        <div class="logo-text-group">
-          <h1>ALLISON CARTAZISTA</h1>
-          <p>Franca/SP • Arte Comercial</p>
+  <!-- WRAPPER FIXO / STICKY DO TOPO (MARQUEE + CABEÇALHO SEMPRE VISÍVEIS) -->
+  <div class="sticky-header-container">
+    <!-- BARRA DE ANÚNCIO DO TOPO (TEXTO MARQUEE CORRENDO LENTAMENTE EM LOOP INFINITO) -->
+    <div class="top-bar">
+      <div class="marquee-track">
+        <!-- BLOCO 1 -->
+        <div class="marquee-item">
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
         </div>
-      </a>
-
-      <!-- MENU DE NAVEGAÇÃO -->
-      <ul class="nav-links">
-        <li><a href="#inicio" class="nav-link">Início</a></li>
-        <li><a href="#servicos" class="nav-link">Serviços</a></li>
-        <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
-        <li><a href="#diferenciais" class="nav-link">Por que Cartaz?</a></li>
-        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="#faq" class="nav-link">Dúvidas</a></li>
-        <li><a href="#orcamento" class="nav-link">Orçamento</a></li>
-      </ul>
-
-      <!-- GRUPO DE BOTÕES CTA & REDES SOCIAIS NO HEADER -->
-      <div class="nav-cta-group">
-        <!-- LINK INSTAGRAM -->
-        <a href="https://www.instagram.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-insta" title="Instagram @allison.cartazista" aria-label="Instagram Allison Cartazista">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <!-- LINK FACEBOOK -->
-        <a href="https://www.facebook.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-face" title="Facebook allison.cartazista" aria-label="Facebook Allison Cartazista">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <!-- LINK WHATSAPP DIRETO -->
-        <a href="https://wa.me/5516991153733?text=Ol%C3%A1%20Allison!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20cartazes/vitrines%20para%20meu%20com%C3%A9rcio%20em%20Franca/regi%C3%A3o." target="_blank" class="social-icon-btn btn-zap" title="WhatsApp: (16) 99115-3733" aria-label="WhatsApp Allison Cartazista">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- MENU MOBILE DRAWER -->
-    <div id="mobileNavDrawer" style="display: none; flex-direction: column; gap: 1rem; padding: 1.5rem; background: #fff; border-top: var(--border-thick);">
-      <a href="#inicio" class="nav-link">Início</a>
-      <a href="#servicos" class="nav-link">Serviços</a>
-      <a href="#portfolio" class="nav-link">Portfólio de Trabalhos</a>
-      <a href="#diferenciais" class="nav-link">Por que Cartaz?</a>
-      <a href="#sobre" class="nav-link">Sobre o Allison</a>
-      <a href="#faq" class="nav-link">Dúvidas Frequentes</a>
-      <a href="#orcamento" class="nav-link">Orçamento Rápido</a>
-      <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
-        <a href="https://www.instagram.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-insta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-face" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://wa.me/5516991153733" target="_blank" class="cartoon-btn btn-green" style="flex: 1; font-size: 1rem; padding: 0.6rem;">
-          <i class="fa-brands fa-whatsapp"></i> Chamar no Zap
-        </a>
+        <!-- BLOCO 2 (DUPLICADO PARA CONTINUIDADE SEM EMENDAS) -->
+        <div class="marquee-item" aria-hidden="true">
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+          <span>⚡ Atendimento Rápido - Entrega rápida 🚚</span>
+        </div>
       </div>
     </div>
-  </header>
+
+    <!-- CABEÇALHO / NAVBAR (COM ENCAIXE PERFEITO E RESPONSIVO) -->
+    <header>
+      <div class="container navbar">
+        <!-- ESCRITO ALLISON CARTAZISTA -->
+        <a href="#" class="logo-brand">
+          <div class="logo-text-group">
+            <h1>ALLISON CARTAZISTA</h1>
+            <p class="brand-sub">Franca/SP • Arte Comercial</p>
+          </div>
+        </a>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+          <li><a href="#diferenciais" class="nav-link">Por que Cartaz?</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+          <li><a href="#orcamento" class="nav-link">Orçamento</a></li>
+        </ul>
+
+        <!-- GRUPO DIREITO DO HEADER (WHATSAPP + BOTÃO SANDUÍCHE COM ESPAÇAMENTO RESPIRÁVEL) -->
+        <div class="navbar-right-actions">
+          <div class="nav-cta-group">
+            <!-- REDES SOCIAIS (DESKTOP) -->
+            <a href="https://www.instagram.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-insta nav-desktop-social" title="Instagram @allison.cartazista" aria-label="Instagram Allison Cartazista">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-face nav-desktop-social" title="Facebook allison.cartazista" aria-label="Facebook Allison Cartazista">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <!-- LINK WHATSAPP DIRETO -->
+            <a href="https://wa.me/5516991153733?text=Ol%C3%A1%20Allison!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20cartazes/vitrines%20para%20meu%20com%C3%A9rcio%20em%20Franca/regi%C3%A3o." target="_blank" class="social-icon-btn btn-zap" title="WhatsApp: (16) 99115-3733" aria-label="WhatsApp Allison Cartazista">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- MENU MOBILE DRAWER -->
+      <div id="mobileNavDrawer" style="display: none; flex-direction: column; gap: 1rem; padding: 1.5rem; background: #fff; border-top: var(--border-thick);">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#portfolio" class="nav-link">Portfólio de Trabalhos</a>
+        <a href="#diferenciais" class="nav-link">Por que Cartaz?</a>
+        <a href="#sobre" class="nav-link">Sobre o Allison</a>
+        <a href="#faq" class="nav-link">Dúvidas Frequentes</a>
+        <a href="#orcamento" class="nav-link">Orçamento Rápido</a>
+        <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+          <a href="https://www.instagram.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-insta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/allison.cartazista/" target="_blank" class="social-icon-btn btn-face" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/5516991153733" target="_blank" class="cartoon-btn btn-green" style="flex: 1; font-size: 1rem; padding: 0.6rem;">
+            <i class="fa-brands fa-whatsapp"></i> Chamar no Zap
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
 
   <!-- SEÇÃO HERO (DESTAQUE PRINCIPAL) -->
   <section class="hero-section" id="inicio">
@@ -279,13 +277,18 @@
           <img src="assets/images/logo-allison-cartazista.png" alt="Allison Cartazista Logo e Mascote Oficial" class="hero-logo-img">
 
           <div class="hero-logo-caption">
-            <div>
+            <div class="hero-caption-info">
               <h3>Allison Cartazista</h3>
-              <div class="hero-social-strip" style="margin-top: 0.2rem;">
+              <div class="hero-social-strip">
                 <a href="https://www.instagram.com/allison.cartazista/" target="_blank" style="color: #c13584; font-weight: 800; font-size: 0.85rem; text-decoration: none;">
                   <i class="fa-brands fa-instagram"></i> @allison.cartazista
                 </a>
               </div>
+            </div>
+            <a href="https://wa.me/5516991153733?text=Ol%C3%A1%20Allison!%20Vi%20seu%20mascote%20e%20site,%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="cartoon-btn btn-green hero-chamar-btn">
+              <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+          </div>
             </div>
             <a href="https://wa.me/5516991153733?text=Ol%C3%A1%20Allison!%20Vi%20seu%20mascote%20e%20site,%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="cartoon-btn btn-green" style="padding: 0.45rem 0.85rem; font-size: 0.95rem;">
               <i class="fa-brands fa-whatsapp"></i> Chamar
@@ -303,7 +306,7 @@
       <div class="section-header">
         <div class="section-tag">NOSSOS SERVIÇOS</div>
         <h2 class="section-title">O que o Allison Produz para seu Comércio</h2>
-        <p class="section-subtitle">Peças planejadas para cada espaço da sua loja: da etiqueta de prateleira até grandes painéis de entrada e fachadas.</p>
+        <p class="section-subtitle">Peças planejadas para cada espaço da sua loja: desde mini cartazes para gôndolas até grandes painéis de entrada e fachadas.</p>
       </div>
 
       <div class="services-grid-4">
@@ -317,12 +320,42 @@
             </div>
             <h3>Cartazes em Papel Cartão</h3>
             <p>O autêntico visual do varejo brasileiro! Letras manuais expressivas e traços pretos grossos, feitos em diversos tamanhos sob medida para cada espaço do seu comércio:</p>
-            <ul class="service-list">
-              <li><span class="bullet">✔</span> <strong>Gôndolas & Prateleiras:</strong> Etiquetas e cartazes pontuais de ofertas e preços</li>
-              <li><span class="bullet">✔</span> <strong>Balcões & Açougues:</strong> Preços visíveis e comunicação direta ao cliente</li>
-              <li><span class="bullet">✔</span> <strong>Ilhas de Produtos:</strong> Destaques de saldão, queima de estoque e promoções</li>
-              <li><span class="bullet">✔</span> <strong>Paredes & Painéis Aéreos:</strong> Cartazes suspensos para grandes áreas e corredores</li>
-              <li><span class="bullet">✔</span> <strong>Recortes Especiais:</strong> Silhuetas temáticas no formato do seu produto</li>
+            <ul class="service-list card-topics-list">
+              <li>
+                <div class="topic-header">
+                  <span class="bullet">✔</span>
+                  <strong>Gôndolas e Prateleiras</strong>
+                </div>
+                <div class="topic-desc">Mini cartazes pontuais, ofertas e preços.</div>
+              </li>
+              <li>
+                <div class="topic-header">
+                  <span class="bullet">✔</span>
+                  <strong>Balcões e Açougues</strong>
+                </div>
+                <div class="topic-desc">Preços visíveis e comunicação direta com o cliente.</div>
+              </li>
+              <li>
+                <div class="topic-header">
+                  <span class="bullet">✔</span>
+                  <strong>Ilhas de Produtos</strong>
+                </div>
+                <div class="topic-desc">Destaques de saldão, queima de estoque e grandes promoções.</div>
+              </li>
+              <li>
+                <div class="topic-header">
+                  <span class="bullet">✔</span>
+                  <strong>Paredes e Painéis Aéreos</strong>
+                </div>
+                <div class="topic-desc">Cartazes suspensos para grandes áreas e corredores amplos.</div>
+              </li>
+              <li>
+                <div class="topic-header">
+                  <span class="bullet">✔</span>
+                  <strong>Recortes Especiais</strong>
+                </div>
+                <div class="topic-desc">Silhuetas temáticas recortadas no formato do seu produto.</div>
+              </li>
             </ul>
           </div>
           <a href="https://wa.me/5516991153733?text=Ol%C3%A1%20Allison!%20Gostaria%20de%20or%C3%A7ar%20cartazes%20em%20papel%20cart%C3%A3o%20para%20minha%20loja." target="_blank" class="cartoon-btn btn-yellow" style="width: 100%; font-size: 1.05rem;">
@@ -713,10 +746,13 @@
         </div>
         <h2>Conheça o Allison Cartazista</h2>
         <p>
-          Sou especialista em <strong>comunicação visual artesanal, pintura em vitrines e letreiramento para o comércio</strong>. Cada cartaz, faixa ou vitrine é produzido com técnica manual impecável, letras de impacto e os contrastes certos que orientam a atenção do consumidor diretamente para o seu produto.
+          Faço cartazes profissionalmente <strong>desde 2008</strong>! Já trabalhei diretamente em <strong>grandes redes de varejo</strong> e atendo diversos clientes e lojas em Franca e toda a região, incluindo grandes redes sob demanda.
         </p>
         <p>
-          Atendo <strong>Franca/SP e toda a região</strong> com pontualidade, compromisso e materiais de altíssima qualidade — seja no papel cartão de varejo, nas pinturas temáticas de vitrines, nas faixas de tecido para sua fachada ou nas faixas plásticas à prova d'água.
+          Trabalho exclusivamente com <strong>material de altíssima qualidade que não desbota ao sol</strong>, utilizando tintas e pigmentos profissionais de alta resistência, traços manuais expressivos e acabamento impecável para valorizar o seu comércio e acelerar suas vendas.
+        </p>
+        <p>
+          Atendo <strong>Franca/SP e toda a região</strong> com pontualidade, compromisso e o padrão diferenciado de quem tem mais de 15 anos de estrada na arte comercial.
         </p>
 
         <!-- LINKS REDES SOCIAIS OFICIAIS -->
@@ -734,7 +770,7 @@
           </a>
         </div>
 
-        <h4 style="font-family: 'Lilita One', cursive; font-size: 1.25rem; text-transform: uppercase; margin-top: 1.5rem;">
+        <h4 style="font-family: 'Lilita One', cursive; font-size: 1.25rem; text-transform: uppercase; margin-top: 1.5rem; text-align: center;">
           📍 Atendimento em Franca e Cidades Vizinhas:
         </h4>
         <div class="cities-badge-wrap">
@@ -770,7 +806,7 @@
 
       <div class="faq-grid">
         
-        <div class="faq-card open">
+        <div class="faq-card">
           <div class="faq-question">
             <span>Quais cidades o Allison Cartazista atende?</span>
             <i class="fa-solid fa-chevron-down"></i>

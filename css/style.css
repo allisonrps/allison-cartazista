@@ -1,3 +1,18 @@
+
+/* ================= HEADER STICKY WRAPPER ================= */
+.sticky-header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
 /* ==========================================================================
    ESTILO CARTAZISTA - VISUAL CARTOON RETÔ / NEO-BRUTALIST ELEGANTE
    Allison Cartazista - Franca/SP e Região
@@ -239,7 +254,7 @@ body {
 
 /* ================= HEADER / NAVBAR ================= */
 header {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 100;
   background: rgba(255, 253, 247, 0.95);
@@ -999,10 +1014,27 @@ header {
 }
 
 .faq-answer {
-  padding: 0 1.5rem 1.25rem;
+  display: none;
+  padding: 0 1.5rem 1.35rem;
   font-size: 1rem;
   color: #3f3f46;
   line-height: 1.6;
+}
+
+.faq-card.open .faq-answer {
+  display: block;
+  animation: faqSlideDown 0.25s ease-out;
+}
+
+@keyframes faqSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= FORMULÁRIO DE ORÇAMENTO RÁPIDO & RESPONSIVIDADE TOTAL ================= */
@@ -1627,5 +1659,91 @@ footer {
   }
   .logo-text-group p {
     font-size: 0.72rem;
+  }
+}
+
+
+/* ================= CARD TOPICS LINE BY LINE ================= */
+.card-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.2rem 0;
+  list-style: none;
+  padding: 0;
+}
+
+.card-topics-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  line-height: 1.4;
+}
+
+.card-topics-list .topic-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.02rem;
+  color: var(--black-ink);
+}
+
+.card-topics-list .topic-desc {
+  padding-left: 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #52525b;
+}
+
+
+/* ================= TWEAKS MOBILE SOLICITADOS ================= */
+@media (max-width: 768px) {
+  .logo-text-group .brand-sub {
+    display: none !important;
+  }
+  .logo-text-group h1 {
+    font-size: 1.45rem !important;
+    color: var(--yellow-main) !important;
+    -webkit-text-stroke: 1.8px #141416;
+    text-shadow: 2px 2px 0px #141416;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
+  .nav-desktop-social {
+    display: none !important;
+  }
+  .navbar-right-actions {
+    gap: 1rem !important;
+  }
+  .mobile-menu-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-logo-caption {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+  }
+  .hero-caption-info h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0;
+  }
+  .hero-social-strip {
+    display: none !important;
+  }
+  .hero-chamar-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 1.05rem !important;
+    padding: 0.8rem 1rem !important;
+  }
+  .card-topics-list .topic-desc {
+    padding-left: 1.4rem;
+    font-size: 0.88rem;
   }
 }
