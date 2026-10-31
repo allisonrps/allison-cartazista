@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartão de Visita Interativo & Imprimível | Allison Cartazista</title>
+  <title>Cartão de Visita Comercial | Allison Cartazista</title>
   
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,7 +156,7 @@
       box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
     }
 
-    /* FORMATO DO CARTÃO (Proporção clássica 9cm x 5cm -> 540px x 300px) */
+    /* FORMATO DO CARTÃO (Proporção clássica 9cm x 5cm -> 540px x 305px) */
     .business-card {
       width: 540px;
       height: 305px;
@@ -169,15 +169,16 @@
       background: #FFFDF7;
     }
 
-    /* ================= FRENTE DO CARTÃO ================= */
+    /* ================= FRENTE DO CARTÃO REFORMULADA ================= */
     .card-front {
       background: #FFFDF7;
       flex-direction: row;
+      position: relative;
     }
 
     /* Faixa lateral decorativa de cartazista */
     .card-front .accent-stripe {
-      width: 18px;
+      width: 16px;
       background: repeating-linear-gradient(
         -45deg,
         var(--yellow-main),
@@ -187,137 +188,191 @@
       );
       border-right: var(--border-medium);
       height: 100%;
+      flex-shrink: 0;
     }
 
-    .card-front .front-body {
+    .card-front .front-layout {
       flex: 1;
-      padding: 1.4rem 1.6rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      height: 100%;
       position: relative;
     }
 
-    .front-top {
+    /* Coluna Esquerda: Textos, Serviços e Telefone Gigante */
+    .front-left-col {
+      padding: 1.25rem 1rem 1.1rem 1.4rem;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
+      z-index: 2;
     }
 
-    .front-brand h2 {
+    /* TÍTULO ALLISON CARTAZISTA: AMARELO COM CONTORNO PRETO */
+    .brand-headline h2 {
       font-family: 'Lilita One', cursive;
-      font-size: 2.1rem;
-      line-height: 0.95;
-      color: var(--black-ink);
+      font-size: 2.7rem;
+      line-height: 0.9;
+      color: var(--yellow-main);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      -webkit-text-stroke: 1.2px #141416;
-      text-shadow: 2px 2px 0px var(--yellow-main);
+      letter-spacing: 0.8px;
+      -webkit-text-stroke: 2.8px var(--black-ink);
+      text-shadow: 
+        3.5px 3.5px 0px var(--black-ink),
+        -1.5px -1.5px 0px var(--black-ink),
+        1.5px -1.5px 0px var(--black-ink),
+        -1.5px 1.5px 0px var(--black-ink);
+      margin-bottom: 0.25rem;
     }
 
-    .front-tagline {
+    .brand-headline .front-tagline {
       display: inline-block;
-      margin-top: 0.4rem;
       background: var(--red-main);
       color: #fff;
       font-family: 'Lilita One', cursive;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       padding: 0.2rem 0.65rem;
       border: 2px solid var(--black-ink);
       border-radius: 999px;
       text-transform: uppercase;
       box-shadow: 2px 2px 0px var(--black-ink);
       transform: rotate(-1.5deg);
+      letter-spacing: 0.4px;
     }
 
-    .front-mascot {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: var(--border-medium);
-      background: var(--yellow-main);
-      box-shadow: 3px 3px 0px var(--black-ink);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    /* Serviços em destaque */
+    .front-services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.32rem;
+      margin: 0.4rem 0;
     }
 
-    .front-mascot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Serviços em destaque no meio */
-    .front-services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.3rem 0;
-    }
-
-    .service-chip {
-      background: #FFFBE6;
-      border: 1.8px solid var(--black-ink);
-      border-radius: 8px;
-      padding: 0.22rem 0.55rem;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--black-ink);
+    .service-pill-row {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--black-ink);
+      white-space: nowrap;
     }
 
-    .service-chip i {
+    .service-pill-row i {
       color: var(--red-main);
+      font-size: 0.85rem;
     }
 
-    /* Rodapé da Frente */
-    .front-footer {
+    /* BLOCO DO TELEFONE COM TAMANHO GIGANTE */
+    .front-phone-box {
+      background: #FFFBE6;
+      border: var(--border-medium);
+      border-radius: 14px;
+      padding: 0.45rem 0.75rem;
+      box-shadow: 3px 3px 0px var(--black-ink);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 2px dashed #d4d4d8;
-      padding-top: 0.6rem;
+      gap: 0.6rem;
     }
 
-    .contact-item {
+    .phone-whatsapp-group {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 800;
-      font-size: 0.95rem;
+      gap: 0.6rem;
     }
 
-    .contact-badge {
-      width: 28px;
-      height: 28px;
+    .phone-icon-zap {
+      width: 38px;
+      height: 38px;
       background: var(--green-whats);
       color: #fff;
       border: 2px solid var(--black-ink);
-      border-radius: 8px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.45rem;
       box-shadow: 2px 2px 0px var(--black-ink);
+      flex-shrink: 0;
     }
 
-    .region-badge {
+    .phone-number-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-number-text .phone-digits {
+      font-family: 'Lilita One', cursive;
+      font-size: 1.65rem;
+      line-height: 1;
+      color: var(--black-ink);
+      letter-spacing: 0.5px;
+    }
+
+    .phone-number-text .phone-badge-label {
+      font-size: 0.68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #15803d;
+      letter-spacing: 0.5px;
+    }
+
+    .city-mini-tag {
       background: #e0f2fe;
       border: 1.8px solid var(--black-ink);
       border-radius: 999px;
-      padding: 0.25rem 0.65rem;
-      font-size: 0.78rem;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
       color: #0369a1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Coluna Direita: Logo / Mascote Grande e Livre */
+    .front-right-mascot-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0.8rem 0.8rem 0.8rem 0;
+    }
+
+    /* Círculo de fundo solar suave, mas o personagem salta sem corte */
+    .mascot-sunburst-bg {
+      position: absolute;
+      width: 175px;
+      height: 175px;
+      background: radial-gradient(circle, var(--yellow-main) 45%, rgba(255, 221, 0, 0.2) 75%);
+      border-radius: 50%;
+      z-index: 1;
+      border: 2.5px dashed var(--yellow-main);
+    }
+
+    .mascot-large-img {
+      width: 185px;
+      height: 185px;
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(4px 4px 0px var(--black-ink));
+      transition: transform 0.2s ease;
+    }
+
+    .mascot-star-ribbon {
+      position: absolute;
+      bottom: 12px;
+      background: var(--yellow-main);
+      border: 2px solid var(--black-ink);
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      font-family: 'Lilita One', cursive;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px var(--black-ink);
+      z-index: 3;
+      white-space: nowrap;
     }
 
     /* ================= VERSO DO CARTÃO COM QR CODE ================= */
@@ -328,10 +383,11 @@
     }
 
     .card-back .back-stripe {
-      width: 18px;
+      width: 16px;
       background: var(--red-main);
       border-right: var(--border-medium);
       height: 100%;
+      flex-shrink: 0;
     }
 
     .card-back .back-body {
@@ -346,7 +402,7 @@
     .back-info {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.65rem;
     }
 
     .back-title {
@@ -501,13 +557,19 @@
         width: 100%;
         max-width: 380px;
         height: auto;
-        min-height: 230px;
+        min-height: 240px;
       }
-      .card-front .front-body {
-        padding: 1rem;
+      .card-front .front-layout {
+        grid-template-columns: 1fr;
       }
-      .front-brand h2 {
-        font-size: 1.6rem;
+      .front-right-mascot-col {
+        display: none;
+      }
+      .brand-headline h2 {
+        font-size: 2rem;
+      }
+      .phone-digits {
+        font-size: 1.3rem !important;
       }
       .card-back .back-body {
         grid-template-columns: 1fr;
@@ -544,38 +606,54 @@
   <!-- CONTAINER DOS DOIS LADOS DO CARTÃO -->
   <div class="cards-container">
     
-    <!-- LADO 1: FRENTE -->
+    <!-- LADO 1: FRENTE (NOVO DESIGN COM LOGO LIVRE E GRANDE + LETRAS AMARELAS COM CONTORNO PRETO + FONE GIGANTE) -->
     <div class="card-wrapper">
       <span class="card-label">Frente</span>
       <div class="business-card card-front">
         <div class="accent-stripe"></div>
-        <div class="front-body">
-          <div class="front-top">
-            <div class="front-brand">
+        <div class="front-layout">
+          
+          <!-- COLUNA ESQUERDA -->
+          <div class="front-left-col">
+            <div class="brand-headline">
               <h2>Allison<br>Cartazista</h2>
               <span class="front-tagline">Arte Comercial Que Vende</span>
             </div>
-            <div class="front-mascot">
-              <img src="assets/images/logo-allison-cartazista.png" alt="Mascote Allison Cartazista">
+
+            <div class="front-services-grid">
+              <div class="service-pill-row">
+                <i class="fa-solid fa-circle-check"></i> Cartazes em Papel Cartão
+              </div>
+              <div class="service-pill-row">
+                <i class="fa-solid fa-circle-check"></i> Pintura em Vitrines
+              </div>
+              <div class="service-pill-row">
+                <i class="fa-solid fa-circle-check"></i> Faixas de Tecido & Plástico
+              </div>
+            </div>
+
+            <!-- NÚMERO DE TELEFONE GIGANTE COM WHATSAPP -->
+            <div class="front-phone-box">
+              <div class="phone-whatsapp-group">
+                <div class="phone-icon-zap"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="phone-number-text">
+                  <span class="phone-badge-label">WhatsApp Direto</span>
+                  <span class="phone-digits">(16) 99115-3733</span>
+                </div>
+              </div>
+              <div class="city-mini-tag">
+                <i class="fa-solid fa-location-dot"></i> Franca/SP
+              </div>
             </div>
           </div>
 
-          <div class="front-services">
-            <span class="service-chip"><i class="fa-solid fa-check"></i> Cartazes em Papel Cartão</span>
-            <span class="service-chip"><i class="fa-solid fa-check"></i> Pintura em Vitrines</span>
-            <span class="service-chip"><i class="fa-solid fa-check"></i> Faixas de Tecido</span>
-            <span class="service-chip"><i class="fa-solid fa-check"></i> Faixas Plásticas</span>
+          <!-- COLUNA DIREITA: LOGO GRANDE E LIVRE SEM CÍRCULO PRETO -->
+          <div class="front-right-mascot-col">
+            <div class="mascot-sunburst-bg"></div>
+            <img src="assets/images/logo-allison-cartazista.png" alt="Mascote Allison Cartazista" class="mascot-large-img">
+            <span class="mascot-star-ribbon">⭐ Desde 2008</span>
           </div>
 
-          <div class="front-footer">
-            <div class="contact-item">
-              <div class="contact-badge"><i class="fa-brands fa-whatsapp"></i></div>
-              <span>(16) 99115-3733</span>
-            </div>
-            <div class="region-badge">
-              <i class="fa-solid fa-location-dot"></i> Franca/SP e Região
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -594,7 +672,7 @@
               <li><i class="fa-solid fa-circle-check"></i> Gôndolas, Ilhas & Balcões</li>
               <li><i class="fa-solid fa-circle-check"></i> Pinturas Sazonais em Vitrine</li>
               <li><i class="fa-solid fa-circle-check"></i> Atendimento Rápido e Pontual</li>
-              <li><i class="fa-solid fa-circle-check"></i> Desde 2008 no Varejo</li>
+              <li><i class="fa-solid fa-circle-check"></i> Material que não desbota ao sol</li>
             </ul>
 
             <div class="social-compact">
@@ -638,7 +716,7 @@
       height: 108,
       colorDark : "#141416",
       colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H
+      correctLevel : QRCode.Level ? QRCode.Level.H : 2
     });
   </script>
 </body>
